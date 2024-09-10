@@ -1,0 +1,109 @@
+body {
+    background: linear-gradient(to right, #0077b6, #d90429, #00b4d8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.logo img, .wishlist img {
+    width: 30px;
+    height: 30px;
+}
+
+.shoe-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.shoe-name {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.shoe-description {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.shoe-size {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.colors .color-circle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.colors .blue {
+    background-color: blue;
+}
+
+.colors .pink {
+    background-color: pink;
+}
+
+.colors .yellow {
+    background-color: yellow;
+}
+
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.amount-text {
+    font-size: 0.8em;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.add-to-cart {
+    background: linear-gradient(to right, #0077b6, #d90429, #00b4d8);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.add-to-cart:hover {
+    opacity: 0.9;
+}

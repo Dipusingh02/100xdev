@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" action="/action_page.php">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p> Click the Try button to display the numbetr of element in the form</p>
+<button onclick="myFunction()">Try it</button>
+<p id="fetch"></p>
+<p class="c">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, cumque voluptatem? Ex inventore totam laborum, dignissimos deserunt non voluptas soluta quaerat officiis labore delectus nulla amet molestiae exercitationem incidunt culpa.</p>
+<p class="c">dipu</p>
+<p class="intro">This is a paragraph.</p>
+<div id="mydiv">
+    <p class="example">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita quam fuga, est ducimus rem quibusdam nihil quis iste et accusamus illum amet sit blanditiis, consequuntur tempore. Nobis est ab autem.</p>
+    <p class="example">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita quam fuga, est ducimus rem quibusdam nihil quis iste et accusamus illum amet sit blanditiis, consequuntur tempore. Nobis est ab autem.</p>
+    <p class="example">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita quam fuga, est ducimus rem quibusdam nihil quis iste et accusamus illum amet sit blanditiis, consequuntur tempore. Nobis est ab autem.</p>
+</div>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        var x = document.getElementById("form").elements.length;
+        var y= document.getElementById("form").elements[0].value;
+        document.getElementById('fetch').innerHTML="Found "+x +"elements in the form" + "first name entered"+
+        y;
+        const para= document.createElement('p');
+    para.innerHTML="this is new created using dom";
+    document.body.appendChild(para);
+
+    // queryselectorAll
+    var paragraphs =document.querySelectorAll('p.intro');
+    paragraphs.forEach(paragraph =>paragraph.style.backgroundColor="red" )
+
+    // finding element with object 
+    const element =document.getElementById('mydiv');
+    const list = element.querySelectorAll(".example");
+    document.getElementById("demo").innerHTML =list.length;
+  
+const nodeList =document.querySelectorAll('div > p');
+for(let i=0;i<=nodeList.length;i++){
+    nodeList[i].style.backgroundColor='yellow';
+}
+
+    }
+    
+</script>
+
+</body>
+
+</html>
