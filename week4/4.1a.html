@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <div id="form">
+        <input onchange="sumfun()" type="number" id="fname1" name="fname1"><br>
+        <input onchange="sumfun()" type="number" id="fname2" name="fname1"><br>
+        <button onclick="sumfun()">Calculate sum </button>
+    </div>
+    <script>
+        function sumfun(){
+            var x = document.getElementById("fname1").value;
+            var y = document.getElementById("fname2").value;
+            const sum=parseInt(x)+parseInt(y)
+            const para= document.createElement('p')
+            para.innerHTML="sum of two numbers "+ x+" and "+ y+" is "+sum;
+            document.body.appendChild(para);
+            // alert("calculated successfully"+" sum of two numbers "+ x+" and "+ y+" is "+sum)
+        }
+    </script>
+</body>
+
+</html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<bod>
     <form id="form" action="/action_page.php">
         <label for="fname">First name:</label><br>
         <input type="text" id="fname" name="fname"><br>
@@ -19,6 +19,7 @@
 <p class="c">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, cumque voluptatem? Ex inventore totam laborum, dignissimos deserunt non voluptas soluta quaerat officiis labore delectus nulla amet molestiae exercitationem incidunt culpa.</p>
 <p class="c">dipu</p>
 <p class="intro">This is a paragraph.</p>
+<script >document.write(Date());</script>
 <div id="mydiv">
     <p class="example">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita quam fuga, est ducimus rem quibusdam nihil quis iste et accusamus illum amet sit blanditiis, consequuntur tempore. Nobis est ab autem.</p>
     <p class="example">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita quam fuga, est ducimus rem quibusdam nihil quis iste et accusamus illum amet sit blanditiis, consequuntur tempore. Nobis est ab autem.</p>
@@ -43,12 +44,11 @@
     const element =document.getElementById('mydiv');
     const list = element.querySelectorAll(".example");
     document.getElementById("demo").innerHTML =list.length;
-  
+  document.getElementById('demo').innerHTML="Date :"+Date();
 const nodeList =document.querySelectorAll('div > p');
 for(let i=0;i<=nodeList.length;i++){
     nodeList[i].style.backgroundColor='yellow';
 }
-
     }
     
 </script>
