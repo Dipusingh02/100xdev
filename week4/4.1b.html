@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        async function sumfun() {
+            var a = document.getElementById("fname1").value;
+            var b = document.getElementById("fname2").value;
+            const response = await fetch("http://localhost:8081/sum?a=" + a + "&b=" + b)
+            const ans = await response.text();
+            document.getElementById("finalsum").innerHTML = ans;
+          
+
+            // const sum=parseInt(x)+parseInt(y)
+            // const para= document.createElement('p')
+            // para.innerHTML="sum of two numbers "+ x+" and "+ y+" is "+sum;
+            // document.body.appendChild(para);
+            // alert("calculated successfully"+" sum of two numbers "+ x+" and "+ y+" is "+sum)
+        }
+          // now play with input as input given by user it will start sending request but using debouncing method
+          function debouncingSumfun(){
+            const timeout=setTimeout(function(){
+                sumfun();
+            },100);
+            clearTimeout(timeout);
+        }
+        // for req.query
+        async function sumfun2() {
+            var a = document.getElementById("fname1").value;
+            var b = document.getElementById("fname2").value;
+            const response2 = await fetch("http://localhost:8081/sum1")
+            const ans2 = await response2.text();
+            document.getElementById("finalsum2").innerHTML = "2answer"+ans2;
+
+            //for req.body
+            // const response2 = await fetch("http://localhost:8081/sum1", {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "application/json"
+            //     },
+            //     body: JSON.stringify({ a: a, b: b })
+            // });
+            //for req.body using axios 
+            // const response2 = await axios.post("http://localhost:8081/sum1", {
+            //         a: a,
+            //         b: b
+                // });
+        }
+
+    </script>
+    
+</head>
+
+<body>
+    <!-- <div id="form">
+        <input type="number" id="fname1" name="fname1"><br>
+        <input type="number" id="fname2" name="fname1"><br>
+        <button onclick="sumfun()">Calculate sum </button>
+        <button onclick="sumfun2()">Calculate sum </button>
+        <p id="finalsum"></p>
+        <p id="finalsum2"></p>
+    </div> -->
+    <div id="form">
+        <input onchange="debouncingSumfun()" type="number" id="fname1" name="fname1"><br>
+        <input onchange="debouncingSumfun()" type="number" id="fname2" name="fname1"><br>
+        <!-- <button onclick="sumfun()">Calculate sum </button> -->
+        <p id="finalsum"></p>
+    </div>
+</body>
+
+</html>

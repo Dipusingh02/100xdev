@@ -29,6 +29,7 @@ if(exitingUser){
       });
 }
 const user = new User({name :name,username:username,password:password});
+
 await user.save();
 res.json({
     "msg":"user created succesfully"

@@ -7,10 +7,17 @@
    
 </head>
 <body>
-    <div id="form">
+    <!-- <div id="form">
         <input onchange="sumfun()" type="number" id="fname1" name="fname1"><br>
         <input onchange="sumfun()" type="number" id="fname2" name="fname1"><br>
         <button onclick="sumfun()">Calculate sum </button>
+        <p id="vavl"></p>
+    </div> -->
+    <div id="form">
+        <input onchange="debouncingSumfun()" type="number" id="fname1" name="fname1"><br>
+        <input onchange="debouncingSumfun()" type="number" id="fname2" name="fname1"><br>
+        <!-- <button onclick="sumfun()">Calculate sum </button> -->
+        <p id="vavl"></p>
     </div>
     <script>
         function sumfun(){
@@ -22,6 +29,7 @@
             document.body.appendChild(para);
             // alert("calculated successfully"+" sum of two numbers "+ x+" and "+ y+" is "+sum)
         }
+      
     </script>
 </body>
 
