@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .invoice {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .centered {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .divider {
+            border-top: 2px solid #007bff;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff; /* Blue header */
+            color: white;
+        }
+        .total {
+            font-weight: bold;
+        }
+        .note {
+            margin: 20px 0;
+            font-style: italic;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="invoice">
+    <h1>(¯`·.¸¸.·´¯`·.¸¸.-Invoice-.¸¸.·´¯`·.¸¸.·´¯)</h1>
+    <p class="centered">Your business with PayPal is valued.</p>
+    
+    <p>Tracking Id#: <span id="tracking-id1"></span></p>
+    <p>Date: <span id="date1"></span></p>
+    
+    <div class="note">Note: Your purchase is completed. If you want any change or cancel, please reach us now at +1 XXX XXX XXXX</div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Details</th>
+                <th>Number of items</th>
+                <th>Per Item Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>BTC Crypto</td>
+                <td>1</td>
+                <td>$700.00</td>
+                <td>$700.00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Subtotal</td>
+                <td>$700.00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Tax (12%)</td>
+                <td>$84.00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td class="total">Total</td>
+                <td class="total">$784.00</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="divider"></div>
+    
+    <p>Thank you for being our loyal customer. Your crypto bought from PayPal has been successfully sent to your wallet. If you need any information, reach us at 1-XXXXXXXX.</p>
+    <p>We are thankful to use PayPal for your purchase.</p>
+</div>
+
+
+
+<script>
+    function generateTrackingId() {
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const numbers = '0123456789';
+        let trackingId = '';
+
+        for (let i = 0; i < 9; i++) {
+            trackingId += letters.charAt(Math.floor(Math.random() * letters.length));
+        }
+        trackingId += numbers.charAt(Math.floor(Math.random() * numbers.length));
+        trackingId += numbers.charAt(Math.floor(Math.random() * numbers.length));
+        return trackingId;
+    }
+
+
+    document.getElementById('tracking-id1').textContent = generateTrackingId();
+    document.getElementById('date1').textContent = new Date().toLocaleDateString();
+</script>
+
+</body>
+</html>
